@@ -17,7 +17,7 @@ def main():
     C'est la fonction principale qui permet de lancer tout le dashboard.
     """
     # URL local à remplacer une fois l'API déployée sur heroku:
-    API_URL = "http://127.0.0.1:5000/app"
+    API_URL = "https://loan-pred-api.herokuapp.com/app"
     # -----------------------------------------------
     # Configuration of the streamlit page
     # -----------------------------------------------
