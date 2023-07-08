@@ -10,6 +10,7 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
+from uuid import uuid4
 
 
 def main():
@@ -315,7 +316,7 @@ def main():
                 # Get features names
                 features = feat()
                 # Get selected columns
-                disp_box_cols = get_list_display_features(features, 2, key=45)
+                disp_box_cols = get_list_display_features(features, 2, key=str(uuid4()))
                 # -----------------------------------------------------------------------------------------------
                 # Get tagets and data for : all customers + Applicant customer + 20 neighbors of selected customer
                 # -----------------------------------------------------------------------------------------------
