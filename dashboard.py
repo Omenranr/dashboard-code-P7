@@ -39,18 +39,18 @@ def main():
     st.image(img, width=100)
 
     # Fonctions:
-    def get_list_display_features(f, def_n, key):
+    def get_list_display_features(f, def_n):
         all_feat = f
         n = st.slider("Nombre de variable à afficher",
                       min_value=2, max_value=40,
-                      value=def_n, step=None, format=None, key=key)
+                      value=def_n, step=None, format=None, key=str(uuid4()))
 
         disp_cols = list(get_features_importances().sort_values(ascending=False).iloc[:n].index)
 
         box_cols = st.multiselect(
             'Choisir la variable à afficher:',
             sorted(all_feat),
-            default=disp_cols, key=key)
+            default=disp_cols, key=str(uuid4()))
         return box_cols
 
     ###############################################################################
@@ -316,7 +316,7 @@ def main():
                 # Get features names
                 features = feat()
                 # Get selected columns
-                disp_box_cols = get_list_display_features(features, 2, key=str(uuid4()))
+                disp_box_cols = get_list_display_features(features, 2)
                 # -----------------------------------------------------------------------------------------------
                 # Get tagets and data for : all customers + Applicant customer + 20 neighbors of selected customer
                 # -----------------------------------------------------------------------------------------------
