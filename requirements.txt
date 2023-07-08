@@ -1,3 +1,4 @@
+numpy<=1.24
 matplotlib==3.5.2
 pandas==1.4.2
 Pillow==9.1.1
@@ -7,8 +8,6 @@ seaborn==0.11.2
 shap==0.40.0
 streamlit==1.9.0
 protobuf==3.20.*
-numpy
 scipy
 dill
 scikit_learn
-numpy==1.24
